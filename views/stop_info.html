@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Info</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>
+            SGTransit
+        </h1>
+        <a href="/">Home</a>
+        <div class="authenticatedSection">
+            <a href="#" id="logoutLink">Logout</a>
+            <a href="cards.html" id="cardLink">Cards</a>
+            <a href="favorites.html" id="favoritesLink">Favorites</a>
+            <a href="user.html" id="userLink">Profile</a>
+        </div>
+        <div class="unauthenticatedSection">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+        <a href="bus_services.html" id="busServLink">Bus Services</a>
+    </header>
+    <section class="stop-info">
+        <button id="addFavBtn">Add This Stop To Favorites</button>
+    </section>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/const.js"></script>
+    <script src="./js/stop_info.js"></script>
+    <script src="./js/add_favorite.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+</html>

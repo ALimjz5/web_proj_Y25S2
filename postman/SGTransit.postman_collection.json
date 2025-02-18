@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "52328ea5-87e5-43de-aab8-bda2ed67d925",
+		"name": "SGTransit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36706725"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "add users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Lim",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "username123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password123@",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "aaaa@gggg.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "e9810e7d867f7ca96a6138d3398615dfe17a0a156298d10ac8514dcc59396740",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/users/me",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Lim",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "fdsfsdfsd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "fffff@reresf.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "674f103ef34030f6e303adcb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "username123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password123@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "e9810e7d867f7ca96a6138d3398615dfe17a0a156298d10ac8514dcc59396740",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/users/logout?token=e9810e7d867f7ca96a6138d3398615dfe17a0a156298d10ac8514dcc59396740",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "e9810e7d867f7ca96a6138d3398615dfe17a0a156298d10ac8514dcc59396740"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "add favorites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "bus stop",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "894857",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/favorites",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get favorites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/favorites?search=sengkang",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "sengkang"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search favorites",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/favorites/name/this is a bus stop",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites",
+								"name",
+								"this is a bus stop"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "hellyea",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "sfsd33",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/favorites/:favid",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites",
+								":favid"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "favid",
+									"value": "674f1067f34030f6e303add1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/favorites/:favid",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"favorites",
+								":favid"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "favid",
+									"value": "674fc3df8213e53c77b03085"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "add card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Primary456",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "FSKJSDF56",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Concession",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "34.90",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/cards",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/cards/mine",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"mine"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Third",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "ASDFCG32",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Adult",
+									"type": "text"
+								},
+								{
+									"key": "balance",
+									"value": "45.89",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/cards/:cardid",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								":cardid"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "cardid",
+									"value": "674f11731ffdcb955b0e52a8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/cards/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								":id"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "674f11731ffdcb955b0e52a8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/cards/name/:value",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cards",
+								"name",
+								":value"
+							],
+							"variable": [
+								{
+									"key": "value",
+									"value": "Secondary"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Bus Arrival",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccountKey",
+						"value": "2qE0et1eQRiy7JewEfDY6Q==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/bus-arrival?busStopCode=83139",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bus-arrival"
+					],
+					"query": [
+						{
+							"key": "busStopCode",
+							"value": "83139"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bus Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/bus-services?search=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bus-services"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bus Stops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/bus-stops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bus-stops"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "471A",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get MRT Alerts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AccountKey",
+						"value": "2qE0et1eQRiy7JewEfDY6Q==",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/train-status",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"train-status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

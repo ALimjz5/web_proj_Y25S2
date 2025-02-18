@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "674f394aae6da1d69c2d09e7"
+  },
+  "name": "Secondary",
+  "code": "FSKJSDF98",
+  "type": "Concession",
+  "balance": 30.5,
+  "user": {
+    "$oid": "674f103ef34030f6e303adcb"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674fc809d0f784e7d447b5b7"
+  },
+  "name": "Primary4567",
+  "code": "FSKJSDF90",
+  "type": "Adult",
+  "balance": 34.9,
+  "user": {
+    "$oid": "674fc767d0f784e7d447b5ae"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a9f90b38bcfa1782f082f4"
+  },
+  "name": "sdfds",
+  "code": "2342342",
+  "type": "Concession",
+  "balance": 100,
+  "user": {
+    "$oid": "674fc767d0f784e7d447b5ae"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a9f9732f0a5075f0302496"
+  },
+  "name": "gfhdfgh",
+  "code": "34556476754",
+  "type": "Adult",
+  "balance": 100,
+  "user": {
+    "$oid": "674fc767d0f784e7d447b5ae"
+  },
+  "__v": 0
+}]

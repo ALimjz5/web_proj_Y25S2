@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>
+            SGTransit
+        </h1>
+        <a href="/">Home</a>
+        <div class="authenticatedSection">
+            <a href="#" id="logoutLink">Logout</a>
+            <a href="cards.html" id="cardLink">Cards</a>
+            <a href="favorites.html" id="favoritesLink">Favorites</a>
+        </div>
+        <div class="unauthenticatedSection">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+        <a href="bus_services.html" id="busServLink">Bus Services</a>
+    </header>
+    <form id="addCardForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="code">Code:</label>
+        <input type="text" name="code" id="code"><br>
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type"><br>
+        <input type="hidden" name="balance" id="balance" value="100.00">
+        <input type="submit" value="Add Card">
+    </form>
+    <div id="statusMessage"></div>
+    <div id="successMessage"></div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/const.js"></script>
+    <script src="./js/add_card.js"></script>
+    <script src="./js/auth.js"></script>
+</body>
+</html>
